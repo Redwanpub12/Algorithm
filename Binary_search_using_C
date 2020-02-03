@@ -1,0 +1,32 @@
+#include <stdio.h> 
+int main(){
+    int first,last,middle,n,arr[100],key,i;
+    printf("How may data element you want to input?: \n");
+    scanf("%d",&n);
+    printf("Enter the element: \n");
+    for(i=0; i<n; i++){
+        scanf("%d",&arr[i]);
+    }
+    printf("Enter the search value: \n");
+    scanf("%d",&key);
+    first=0;
+    last= n-1;
+    middle= (first+last)/2;
+    while(first<=last){
+        if(arr[middle]<key){
+            first= middle+1;
+        }else if(arr[middle]==key){
+            printf("%d is found on position %d", key,middle+1);
+            break;
+        }
+        else{
+            last = middle-1;
+            
+        }
+        middle = (first+last)/2;
+    }
+    if(first>last){
+        printf("%d is not found..!",key);
+    }
+    
+}
